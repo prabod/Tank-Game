@@ -17,4 +17,4 @@ class Brain:
         move = self.MOVES[randint(0, 3)]
         #print move
 
-        #Messenger().send(move, '192.168.8.100', 6000)
+        #Messenger().send(move, '192.168.8.104', 6000)
