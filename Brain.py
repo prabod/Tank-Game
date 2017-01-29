@@ -15,6 +15,6 @@ class Brain:
 
     def decide(self,data):
         move = self.MOVES[randint(0, 3)]
-        #print move
+        print move
 
-        #Messenger().send(move, '192.168.8.104', 6000)
+        Messenger().send(move, '192.168.8.101', 6000)

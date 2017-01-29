@@ -19,7 +19,7 @@ class Parser:
                     direction = tank_info[2]
                     tanks.append([name,(x,y),direction])
             # self.GUI.start(tanks)
-            # self.brain.start(tanks)
+            self.brain.decide(tanks)
             print tanks
 
 
@@ -28,7 +28,7 @@ class Parser:
         elif data[0] == "I":
             data = data[:-1]
             temp = data.split(":")
-            player_name = temp[1]
+            player_name = data[1]
             brick_coordinates = [(eval(x[0]),eval(x[2])) for x in temp[2].split(";")]
             stone_coordinates = [(eval(x[0]),eval(x[2])) for x in temp[3].split(";")]
             water_coordinates = [(eval(x[0]),eval(x[2])) for x in temp[4].split(";")]
@@ -46,7 +46,7 @@ class Parser:
                 player_info.append([eval(each) for each in temp[i].split(";")[1:]])
             brick_health = [eval(each) for each in temp[-1].split(";")]
             # self.gui.update(player_info,brick_health)
-            # self.brain.update(player_info,brick_health)
+            self.brain.decide(player_info)
             print(player_info,brick_health)
 
         # Coin Packs

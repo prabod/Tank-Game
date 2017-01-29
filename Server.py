@@ -13,7 +13,6 @@ class ServerListner(threading.Thread):
         # Create a TCP/IP socket
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.components = []
-        print "ininit"
 
     def run(self):
         # Bind the socket to the port
